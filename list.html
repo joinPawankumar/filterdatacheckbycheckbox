@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<form method="POST" id="searchOptions">
+ <td><input id="bams" type="checkbox" class="box" name="bams" value="BAMS"/>BAMS</td>
+ <td><input id="md" type="checkbox" class="box"  name="md" value="MD" />MD</td>
+</form>
+</body>
+<script>
+$(document).ready(function(){
+    $('.box').click(function() 
+	{
+	var bams = '';
+	if($('#bams'). prop("checked") == true)
+      bams = $('#bams').val();
+	  var md = '';
+	if($('#md'). prop("checked") == true)
+	  md = $('#md').val();
+    window.location.href = 'search.php?bams=' + bams + '&md=' + md;
+	});
+});
+</script>
+</html>
